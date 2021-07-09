@@ -20,10 +20,10 @@ sudo apt-get install privoxy
 sudo gedit /etc/privoxy/config
 ```
 第一步定位到4.1. listen-address 这一段，找到监听的端口，
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20210708152032538.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2J1cHQwNzMxMTQ=,size_16,color_FFFFFF,t_70#pic_center)
+![在这里插入图片描述](https://github.com/buptis073114/RustOnline/blob/main/1.png)
 可以看到端口一般都是8118。
 接着找到5.2. forward-socks4, forward-socks4a, forward-socks5 and forward-socks5t这一节，加上如下配置(图中是爱思爱思R的配置):
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20210708152119845.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2J1cHQwNzMxMTQ=,size_16,color_FFFFFF,t_70#pic_center)
+![在这里插入图片描述](https://github.com/buptis073114/RustOnline/blob/main/2.png)
 在这个文本的最后添加如下两行：
 
 ```bash
@@ -32,7 +32,7 @@ forward-socks5 / 127.0.0.1:1080
 ```
 
 如下图：
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20210708151830532.png#pic_center)
+![在这里插入图片描述](https://github.com/buptis073114/RustOnline/blob/main/4.png)
 保存后，重启一下Privoxy:
 ```bash
 sudo /etc/init.d/privoxy restart
@@ -101,3 +101,5 @@ proxy = "socks5://127.0.0.1:1080"
 ```
 
 终于可以了
+
+![在这里插入图片描述](https://github.com/buptis073114/RustOnline/blob/main/3.png)
